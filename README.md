@@ -43,56 +43,93 @@ Build the Project
 Ensure that all dependencies are downloaded by syncing Gradle.
 Connect your Android device or start an emulator.
 Click on the Run button in Android Studio to build and run the application.
-Project Structure
 
-novelnest/
-│
-├── app/                    # Main application code
-│   ├── src/                # Source files
-│   │   ├── main/           # Main source files
-│   │   │   ├── java/       # Java source code
-│   │   │   └── res/        # Resource files (layouts, drawables, etc.)
-│   │   └── test/           # Unit tests
-│   └── build.gradle        # App-level Gradle file
-│
-├── build.gradle            # Project-level Gradle file
-├── settings.gradle         # Settings for Gradle
-└── README.md               # Project documentation
-Usage
-Fetching Novels
-Open the application.
-Browse or search for novels using the search bar.
-Select a novel to view its chapters.
-Click on a chapter to start reading.
-APIs
-This app interacts with APIs to fetch novel data and chapters. Below is a summary of the primary API interactions:
+Novel API : 
 
-Get Novels: Fetches a list of novels from the backend.
-Get Chapters: Fetches a list of chapters for a selected novel.
-Get Chapter Content: Fetches the content of a selected chapter.
-Example API Endpoint:
+Get All Novels   Endpoint: GET /api/novels
+Get Novel Details  Endpoint: GET /api/novels/{id}
+Search Novels GET /api/novels/search
 
-http
-Copy code
-GET /api/novels
-Adding a New Source
-To add a new novel source:
 
-Define the base URL in the application code.
-Create a parser using Jsoup to extract the required data.
-Integrate the new source into the existing novel fetching flow.
-Contributing
-Contributions are welcome! To contribute:
+Chapter Management
+Get Chapters of a Novel
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a Pull Request.
-Please make sure to update tests as appropriate.
+Endpoint: GET /api/novels/{id}/chapters
+Description: Fetches a list of chapters for a specific novel.
+Get Chapter Details
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Endpoint: GET /api/novels/{id}/chapters/{chapterId}
+Description: Fetches detailed content of a specific chapter by its ID.
+3. User Management
+Register User
+
+Endpoint: POST /api/users/register
+Description: Registers a new user.
+Login User
+
+Endpoint: POST /api/users/login
+Description: Authenticates a user and provides a token.
+Get User Profile
+
+Endpoint: GET /api/users/{userId}
+Description: Fetches user profile details.
+4. Reading Progress
+Get User Reading Progress
+
+Endpoint: GET /api/users/{userId}/progress
+Description: Fetches the reading progress of a user.
+Update Reading Progress
+
+Endpoint: POST /api/users/{userId}/progress
+Description: Updates the reading progress for a user.
+5. Favorites and Bookmarks
+Add Novel to Favorites
+
+Endpoint: POST /api/users/{userId}/favorites
+Description: Adds a novel to the user’s favorites list.
+Remove Novel from Favorites
+
+Endpoint: DELETE /api/users/{userId}/favorites/{novelId}
+Description: Removes a novel from the user’s favorites list.
+Get User Favorites
+
+Endpoint: GET /api/users/{userId}/favorites
+Description: Fetches the list of favorite novels for a user.
+6. Ratings and Reviews
+Add Review for a Novel
+
+Endpoint: POST /api/novels/{id}/reviews
+Description: Adds a review for a specific novel.
+Get Reviews for a Novel
+
+Endpoint: GET /api/novels/{id}/reviews
+Description: Fetches reviews for a specific novel.
+7. Admin and Management
+Add New Novel
+
+Endpoint: POST /api/admin/novels
+Description: Adds a new novel to the system.
+Update Novel Details
+
+Endpoint: PUT /api/admin/novels/{id}
+Description: Updates details of a specific novel.
+Delete Novel
+
+Endpoint: DELETE /api/admin/novels/{id}
+Description: Deletes a specific novel from the system.
+8. Miscellaneous
+Get Genres
+
+Endpoint: GET /api/genres
+Description: Fetches a list of available genres.
+Get Authors
+
+Endpoint: GET /api/authors
+Description: Fetches a list of authors.
+
+
+
+
 
 Contact
 If you have any questions or feedback, feel free to reach out:
