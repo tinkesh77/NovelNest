@@ -6,7 +6,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,6 +33,7 @@ public class NovelMetaDataService {
             String rating = doc.select("div.rating .score").text();
             Elements data_li = doc.select(".info-meta > li");
 
+
             System.out.println("Cover Image Source: " + absoluteImageSrc);
             System.out.println("Title: " + title);
             System.out.println("Subtitle: " + subtitle);
@@ -43,6 +43,7 @@ public class NovelMetaDataService {
             System.out.println("Chapters: " + chapters);
             System.out.println("Last Update: " + lastUpdate);
             System.out.println("Rating: " + rating);
+
 
             novelMetaData.setCoverImage(absoluteImageSrc);
             novelMetaData.setTitle(title);
