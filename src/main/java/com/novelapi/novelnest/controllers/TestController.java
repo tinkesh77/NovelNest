@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/test")
+@RequestMapping("api/")
 public class TestController {
     private final TestService testService;
 
@@ -16,12 +16,8 @@ public class TestController {
         this.testService = testService;
     }
 
-    @GetMapping
+    @GetMapping("/test")
     public String getTest() {
         return testService.getName();
     }
 }
-
-//i am adarsh bro
-// i am tinkesh bhoyar
-// i am adarsh bro 2

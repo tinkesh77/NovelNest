@@ -1,4 +1,4 @@
-package com.novelapi.novelnest.models;
+package com.novelapi.novelnest.entity;
 
 public class NovelMetaData {
   private Long id;

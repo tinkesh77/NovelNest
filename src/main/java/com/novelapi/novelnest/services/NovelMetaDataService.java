@@ -1,9 +1,8 @@
 package com.novelapi.novelnest.services;
 
-import com.novelapi.novelnest.models.NovelMetaData;
+import com.novelapi.novelnest.entity.NovelMetaData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 import java.net.MalformedURLException;
@@ -17,7 +16,7 @@ public class NovelMetaDataService {
     public List<NovelMetaData> getNovelData() {
         List<NovelMetaData> list = new ArrayList<>();
         NovelMetaData novelMetaData = new NovelMetaData();
-        String baseUrl = "https://novelfull.me";
+        String baseUrl = "https://novelbin.me";
         try {
             Document doc = Jsoup.connect("https://novelfull.me/alchemy-and-martial-supreme").get();
 

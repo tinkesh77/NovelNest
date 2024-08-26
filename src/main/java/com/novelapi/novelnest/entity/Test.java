@@ -1,4 +1,4 @@
-package com.novelapi.novelnest.models;
+package com.novelapi.novelnest.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
