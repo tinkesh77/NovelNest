@@ -11,6 +11,53 @@ public class NovelService {
 
     @Autowired
     private NovelRepositories novelRepositories;
+    private Novel novelEx;
+
+    public String delete(Long novelId){
+        if (!novelRepositories.existsById(novelId)){
+            return "Invalid Id";
+        }
+        novelRepositories.deleteById(novelId);
+        return "Deleted";
+    }
+
+    public String update(Long novelId , Novel novel){
+
+        if (novel == null){
+            return "Novel is Empty";
+        }
+        if (!novelRepositories.existsById(novelId)){
+            return "Invalid Id";
+        }
+        novelEx = new Novel();
+        if (novel.getNovelTitle() != null){
+            novelEx.setNovelTitle(novel.getNovelTitle());
+        }
+        if (novel.getNovelAuthor() != null){
+            novelEx.setNovelAuthor(novel.getNovelAuthor());
+        }
+        if (novel.getNovelGenra() != null){
+            novelEx.setNovelGenra(novel.getNovelGenra());
+        }
+        if (novel.getNovelStatus() != null){
+            novelEx.setNovelStatus(novel.getNovelStatus());
+        }
+        if (novel.getAlternativaName() != null){
+            novelEx.setNovelStatus(novel.getAlternativaName());
+        }
+        if (novel.getChapters() != null){
+            novelEx.setChapters(novel.getChapters());
+        }
+        if (novel.getDecrption() != null){
+            novelEx.setDecrption(novel.getDecrption());
+        }
+        if (novel.getPublisher() != null){
+            novelEx.setPublisher(novel.getPublisher());
+        }
+        // only update the data which is provide.
+        novelRepositories.save(novelEx);
+        return null;
+    }
 
     public String add(Novel novel){
         return validation(novel);
