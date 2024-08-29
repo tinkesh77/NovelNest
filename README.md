@@ -1,4 +1,4 @@
-# NovelNest - Android Application
+# NovelNest - Sping Boot API
 
 NovelNest is an Android application designed to fetch and display web novels from various sources. It provides a seamless reading experience with a modern and light UI, making it easy for users to browse and read their favorite novels.
 
