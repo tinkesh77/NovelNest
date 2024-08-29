@@ -1,5 +1,8 @@
 package com.admin.novelnestadmin.entity;
 
+import com.admin.novelnestadmin.entity.sub.AlternativaName;
+import com.admin.novelnestadmin.entity.sub.Author;
+import com.admin.novelnestadmin.entity.sub.Genre;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,14 +20,17 @@ public class Novel {
     private Long id;
 
     private String novelTitle;
-    private String novelAuthor;
-    private String novelGenra;
     private String novelStatus;
-    private String alternativaName;
-    private String decrption;
+    private String description;
     private String coverImage;
     private String publisher;
 
-    @OneToMany(mappedBy = "novel")
-    private Set<Chapter> chapters;
+    @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Author> authors;
+
+    @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Genre> genres;
+
+    @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<AlternativaName> alternativaNames;
 }

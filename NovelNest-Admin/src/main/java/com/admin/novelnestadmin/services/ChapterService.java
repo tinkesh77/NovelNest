@@ -1,11 +1,13 @@
 package com.admin.novelnestadmin.services;
 
 
-import com.admin.novelnestadmin.entity.Chapter;
+import com.admin.novelnestadmin.entity.sub.Chapter;
 import com.admin.novelnestadmin.entity.Novel;
 import com.admin.novelnestadmin.repositories.ChapterRepository;
 import com.admin.novelnestadmin.repositories.NovelRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,12 +19,12 @@ public class ChapterService {
     @Autowired
     private NovelRepositories novelRepositories;
 
-    public String delete(Long chapterId){
+    public ResponseEntity<String> delete(Long chapterId){
         chapterRepository.deleteById(chapterId);
         if (!chapterRepository.existsById(chapterId)){
-            return "Invalid Chapter Id";
+            return new ResponseEntity<>("Invalid Chapter Id" , HttpStatus.NOT_FOUND);
         }
-        return "deleted";
+        return new ResponseEntity<>("Deleted." , HttpStatus.OK);
     }
 
     public Chapter addChapter(Long novelId , Chapter chapter){
@@ -32,14 +34,12 @@ public class ChapterService {
         return chapterRepository.save(chapter);
     }
 
-    public String update(Long chapterId , Chapter chapter){
+    public ResponseEntity<String> update(Long chapterId , Chapter chapter){
         if(!chapterRepository.existsById(chapterId)){
-            return "invalid Chapter Id";
+            return new ResponseEntity<>("Invalid Chapter Id" , HttpStatus.NOT_FOUND);
         }
-
         chapter.setId(chapterId);
         chapterRepository.save(chapter);
-        return "Updated !";
+        return new ResponseEntity<>("Updated." , HttpStatus.OK);
     }
-
 }
