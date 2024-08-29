@@ -5,8 +5,6 @@ NovelNest is an Android application designed to fetch and display web novels fro
 ## Features
 
 - **User Management**: Handle user registration, login, profile management, and authentication.
-- **Novel Management**: Manage novels, including adding, updating, and deleting novels.
-- **Chapter Management**: Manage individual chapters of novels.
 - **Reading and Bookmarking**: Handle user reading history, bookmarks, and progress tracking.
 - **Review and Rating**: Manage user reviews and ratings for novels.
 - **Notification**: Manage notifications sent to users regarding updates or other important information.
@@ -20,14 +18,6 @@ NovelNest is an Android application designed to fetch and display web novels fro
 ### User Management Module
 - **Responsibilities**: Handle user registration, login, profile management, and authentication.
 - **Entities**: User, Admin
-
-### Novel Management Module
-- **Responsibilities**: Manage novels, including adding, updating, and deleting novels.
-- **Entities**: Novel, Author, Genre, Tag
-
-### Chapter Management Module
-- **Responsibilities**: Manage individual chapters of novels.
-- **Entities**: Chapter
 
 ### Reading and Bookmarking Module
 - **Responsibilities**: Handle user reading history, bookmarks, and progress tracking.
