@@ -1,6 +1,8 @@
 package com.user.novelnestuser.service;
 
-import com.user.novelnestuser.entity.User;
+
+
+import com.entity.novelnestentity.User;
 
 import java.util.Optional;
 
@@ -12,5 +14,4 @@ public interface UserService {
 
     Optional<User> findUserByUsername(String username);
 
-    boolean checkPassword(String rawPassword, String encodedPassword);
 }

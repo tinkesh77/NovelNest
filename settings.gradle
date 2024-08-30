@@ -1,2 +1,5 @@
 rootProject.name = 'novelnest'
 include 'NovelNest-Admin'
+include 'NovelNest-User'
+include 'NovelNest-Entity'
+include 'NovelNest-Security'

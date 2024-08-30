@@ -1,8 +1,8 @@
 package com.admin.novelnestadmin.controllers;
 
 
-import com.admin.novelnestadmin.entity.sub.Chapter;
 import com.admin.novelnestadmin.services.ChapterService;
+import com.entity.novelnestentity.Chapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

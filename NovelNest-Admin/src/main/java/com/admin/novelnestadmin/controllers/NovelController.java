@@ -1,8 +1,8 @@
 package com.admin.novelnestadmin.controllers;
 
 
-import com.admin.novelnestadmin.entity.Novel;
 import com.admin.novelnestadmin.services.NovelService;
+import com.entity.novelnestentity.Novel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ public class NovelController {
     private NovelService novelService;
 
     @PostMapping("/add")
-    public String createNovel(@RequestBody  Novel novel){
+    public String createNovel(@RequestBody Novel novel){
         return novelService.add(novel);
     }
 
