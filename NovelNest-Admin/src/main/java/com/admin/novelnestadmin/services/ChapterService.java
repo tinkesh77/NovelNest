@@ -1,10 +1,10 @@
 package com.admin.novelnestadmin.services;
 
 
-import com.admin.novelnestadmin.entity.sub.Chapter;
-import com.admin.novelnestadmin.entity.Novel;
 import com.admin.novelnestadmin.repositories.ChapterRepository;
 import com.admin.novelnestadmin.repositories.NovelRepositories;
+import com.entity.novelnestentity.Chapter;
+import com.entity.novelnestentity.Novel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

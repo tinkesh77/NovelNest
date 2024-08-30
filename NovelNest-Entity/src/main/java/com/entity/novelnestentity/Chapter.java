@@ -1,6 +1,5 @@
-package com.admin.novelnestadmin.entity.sub;
+package com.entity.novelnestentity;
 
-import com.admin.novelnestadmin.entity.Novel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

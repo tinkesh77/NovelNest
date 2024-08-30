@@ -1,6 +1,7 @@
 package com.user.novelnestuser.repository;
 
-import com.user.novelnestuser.entity.User;
+
+import com.entity.novelnestentity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,10 @@
-package com.user.novelnestuser.entity;
+package com.entity.novelnestentity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
@@ -22,8 +25,6 @@ public class User {
     private String email;
 
     private String password;
-
-    // Constructor without the 'id' field
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;

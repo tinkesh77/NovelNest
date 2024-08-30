@@ -1,12 +1,10 @@
-package com.admin.novelnestadmin.entity;
+package com.entity.novelnestentity;
 
-import com.admin.novelnestadmin.entity.sub.AlternativaName;
-import com.admin.novelnestadmin.entity.sub.Author;
-import com.admin.novelnestadmin.entity.sub.Genre;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -26,11 +24,11 @@ public class Novel {
     private String publisher;
 
     @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Author> authors;
+    private Set<Author> authors = new HashSet<>();
 
     @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Genre> genres;
+    private Set<Genre> genres = new HashSet<>();
 
     @OneToMany(mappedBy = "novel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<AlternativaName> alternativaNames;
+    private Set<AlternativeName> alternativeNames = new HashSet<>();
 }

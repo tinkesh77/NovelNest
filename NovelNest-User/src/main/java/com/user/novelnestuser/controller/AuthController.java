@@ -1,6 +1,6 @@
 package com.user.novelnestuser.controller;
 
-import com.user.novelnestuser.entity.User;
+import com.entity.novelnestentity.User;
 import com.user.novelnestuser.request.LoginRequest;
 import com.user.novelnestuser.request.SignupRequest;
 import com.user.novelnestuser.service.UserService;
@@ -32,7 +32,6 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Error: Username already in use");
         }
 
-        // Use password encoder to encode the password before saving
         User user = new User(signupRequest.getUsername(), signupRequest.getEmail(), signupRequest.getPassword());
         userService.registerUser(user);
         return ResponseEntity.ok().body("User registered successfully");
@@ -42,9 +41,6 @@ public class AuthController {
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
         User user = userService.findUserByUsername(loginRequest.getUsername()).orElse(null);
 
-        if (user == null || !userService.checkPassword(loginRequest.getPassword(), user.getPassword())) {
-            return ResponseEntity.badRequest().body("Error: Invalid username or password!");
-        }
 
         return ResponseEntity.ok("Login successful!");
     }
