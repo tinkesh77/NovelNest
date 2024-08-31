@@ -1,13 +1,11 @@
 package com.entity.novelnestentity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Objects;
 
+@Builder
 @Entity
 @Getter
 @Setter
@@ -25,6 +23,8 @@ public class User {
     private String email;
 
     private String password;
+
+    private boolean enabled = true;
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;

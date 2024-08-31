@@ -14,8 +14,6 @@ public class ChapterController {
 
     @Autowired
     private ChapterService chapterService;
-
-
     @PostMapping("/add/{novelId}")
     public ResponseEntity<String> addChapter(@PathVariable Long novelId  , @RequestBody Chapter chapter){
         Chapter saveChapter = chapterService.addChapter(novelId , chapter);
